@@ -1,0 +1,23 @@
+nav.navbar.navbar-fixed-top.navbar-dark.bg-inverse
+  button.navbar-toggler.hidden-md-up.pull-xs-right(type='button', data-toggle='collapse', data-target='#navbar') &#x2630;
+  #navbar.navbar-nav.collapse.navbar-toggleable-sm
+    .container
+      a.navbar-brand(href='/')
+        img.avatar.img-circle.hidden-xs-down(src='/images/home.jpg')
+      a.navbar-brand(href='/') 
+        i.icn-logo.material-icons bookmark_border
+        | Royal Niddle Clothings
+      .nav-items.clearfix
+        if !user || !currentUser
+          a.nav-item.nav-link(href='/signup') Sign up
+        a.nav-item.nav-link(href='/about') About us
+        a.nav-item.nav-link(href='/contact') Contact us
+        if currentUser
+          a.nav-item.nav-link(href='/profile') My Profile
+
+      if currentUser || user
+        div
+          img.avatar.img-circle.hidden-xs-down(src='/images/home.jpg' alt='avatar')
+          a.btn.btn-light.pull-md-right(href='/users/logout') Log out
+      else
+        a.btn.btn-info.pull-md-right(href='/login') Log in

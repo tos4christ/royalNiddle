@@ -1,0 +1,40 @@
+extends layout
+
+block content
+
+	.main.container
+		.row
+			.col-md-10.col-md-offset-2
+				a.nav-link.scroll(href='/signup')
+					h1 Register to be our distributor now!
+
+		.row.red
+			.col-md-6.col-md-offset-3
+				h1 Royal Niddle Outfits
+
+		.row
+			.col-md-3.col-md-offset-1
+				a.nav-link(href='/')
+					img.index(src='/images/image1.jpg')
+				div.form-group
+					select.form-control(id='size' name='size')
+							option Select Size
+							option(value='23') 23
+							option(value='25') 25
+			.col-md-3.col-md-offset-1
+				a.nav-link(href='/')
+					img.index(src='/images/image2.jpg')
+				div.form-group
+					select.form-control(id='size' name='size')
+							option Select Size
+							option(value='23') 23
+							option(value='25') 25
+			.col-md-3.col-md-offset-1
+				a.nav-link(href='/')
+					img.index(src='/images/image3.jpg')
+				div.form-group
+					select.form-control(id='size' name='size')
+							option Select Size
+							option(value='23') 23
+							option(value='25') 25
+

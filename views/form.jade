@@ -1,0 +1,35 @@
+fieldset
+	legend Your profile Information
+	div.form-group
+		label(for='name') Name:
+		input.form-control(type='text' id='name' name='name' placeholder='Your name')
+	div.form-group
+		label(for='locations') Location:
+		select#location.form-control(name='locations')
+			option(value='lagos') Lagos
+			option() Abuja
+			option() Port Harcourt
+			option() Cross Rivers
+			option() Rivers
+			option() Ogun
+			option() Delta
+			option() Oyo
+			option() Osun
+	div.form-group
+		label(for='address') Your Address:
+		input.form-control(type='text' id='address' name='address')
+	div.form-group
+		label(for='phone') Phone:
+		input.form-control(type='tel' id='phone' name='phone' placeholder='080-000-00000')
+	div.form-group
+		label(for='email') Email:
+		input.form-control(type='email' id='email' name='email' placeholder='example@email.com')
+	div.form-group
+		label(for='password') Password:
+		input.form-control(type='password' id='password' name='password')
+	div.form-group
+		label(for='confirmPassword') Confirm password
+		input.form-control(type='password' id='confirmPassword' name='confirmPassword')
+	div.form-group
+		input.form-control(type='submit')
+

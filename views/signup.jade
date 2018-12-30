@@ -1,0 +1,15 @@
+extends layout
+
+block content
+	.main.container.step
+		.row
+			.col-md-6.col-md-offset-2
+				h1 Sign up
+				form(action="/signup", method="post")
+					include form
+				p
+					a.btn.btn-primary(href='/OauthUsers/github/login') Github
+					|  or  
+					a.btn.btn-primary(href='/OauthUsers/facebook/login') Facebook
+			.col-md-3.col-md-offset-1
+				img.hidden-xs-down.hide(src='/images/sidebar.jpg')
