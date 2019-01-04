@@ -9,7 +9,7 @@
     "node": "10.14.1"
   },
   "dependencies": {
-    "bcrypt": "^0.8.7",
+    "bcrypt": "^3.0.3",
     "connect-mongo": "^2.0.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
