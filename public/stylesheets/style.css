@@ -4,6 +4,14 @@
 body {
 	background: #1d2a33 url('../images/bg.jpg') no-repeat;
 	background-size: cover; 
+	color: black;
+}
+
+p {
+	color: black;
+	font-style: arial;
+	font-size: 20px;
+	padding: 20px;
 }
 
 .row {
@@ -25,8 +33,9 @@ a:hover {
 
 h1 {
 	margin: none;
-	padding: none;
+	padding: 5px;
 	text-align: center;
+	color: black;
 }
 
 img.index {
