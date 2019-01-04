@@ -17,13 +17,17 @@ router.get('/contactus', function(req, res) {
 
 //GET /signup page
 router.get('/signup', function(req, res, next) {
-	req.session.destroy(function(err) {
-		if(err) {
+	if(req.session) {
+		req.session.destroy(function(err) {
+			if(err) {
 			return next(err);
 		} else {
 			res.render('signup', {title: 'Sign Up'});
 		}
 	});
+	} else {
+		res.render('signup', {title: 'Sign Up'});
+	}
 });
 
 
