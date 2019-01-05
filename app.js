@@ -51,7 +51,7 @@ function generateOrFindUser(accessToken, refreshToken, profile, done) {
 passport.use(new GithubStrategy({
 	clientID: process.env.GITHUB_CLIENT_ID,
 	clientSecret: process.env.GITHUB_CLIENT_SECRET,
-	callbackURL: "/OauthUsers/github/callback",
+	
 	proxy: true
 }, generateOrFindUser));
 
