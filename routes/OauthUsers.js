@@ -3,7 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 
 function getHost(req, res) {
-	console.log('igot here');
+	console.log('i got here');
 }
 
 //GET /github/login
@@ -24,7 +24,7 @@ router.get('/facebook/login',
 
 
 // GET /facebook/callback
-router.get('/facebook/callback',
+router.get('/facebook/callback', getHost,
 	passport.authenticate('facebook', {failureRedirect: '/'}),
 	function(req, res) {
 		// Success Auth, redirect profile page
