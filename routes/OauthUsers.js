@@ -19,7 +19,7 @@ router.get('/github/callback',
 	});
 
 // GET /facebook/login
-router.get('/facebook/login',
+router.get('/facebook/login', getHost,
 	passport.authenticate('facebook', {scope: ["email"]}));
 
 
