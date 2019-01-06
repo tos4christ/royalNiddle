@@ -7,11 +7,11 @@ function getHost(req, res) {
 }
 
 //GET /github/login
-router.get('/github/login', getHost, 
+router.get('/github/login',
 	passport.authenticate('github'));
 
 // GET /github/callback
-router.get('/github/callback', getHost,
+router.get('/github/callback',
 	passport.authenticate('github', {failureRedirect: '/'}), 
 	function(req, res) {
 		// Success Auth, redirect profile page
@@ -19,12 +19,12 @@ router.get('/github/callback', getHost,
 	});
 
 // GET /facebook/login
-router.get('/facebook/login', getHost,
+router.get('/facebook/login',
 	passport.authenticate('facebook', {scope: ["email"]}));
 
 
 // GET /facebook/callback
-router.get('/facebook/callback', getHost,
+router.get('/facebook/callback',
 	passport.authenticate('facebook', {failureRedirect: '/'}),
 	function(req, res) {
 		// Success Auth, redirect profile page
