@@ -3,7 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 
 function getHost(req, res) {
-	console.log(req);
+	console.log('igot here');
 }
 
 //GET /github/login
