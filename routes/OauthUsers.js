@@ -2,8 +2,9 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 
-function getHost(req, res) {
+function getHost(req, res, next) {
 	console.log('i got here');
+	next();
 }
 
 //GET /github/login
