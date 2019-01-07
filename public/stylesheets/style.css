@@ -184,7 +184,7 @@ input[type='submit'] {
 	}
 }
 
-@media (min-width: 47em) { 
+@media (min-width: 768px) { 
 	.navbar {
 		min-height: 70px;
 	}
@@ -198,7 +198,11 @@ input[type='submit'] {
 	}
 	.main {
 		padding-top: 8rem;
+		display: block;
+		width: 90%;
 	}
-	
+	img {
+		width: 80%;
+	}
 }
 
