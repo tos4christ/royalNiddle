@@ -25,7 +25,7 @@ router.get('/facebook/login',
 
 
 // GET /facebook/callback
-router.get('/facebook/callback',
+router.get('/facebook/callback', getHost,
 	passport.authenticate('facebook', {failureRedirect: '/'}),
 	function(req, res) {
 		// Success Auth, redirect profile page
