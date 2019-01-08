@@ -98,8 +98,8 @@ app.use(session(sessionObject));
 //Initialize Passport
 app.use(passport.initialize());
 
-//Restore Session
-app.use(passport.session());
+////Restore Session
+//app.use(passport.session());
 
 // make user ID available in templates
 app.use(function(req, res, next) {
