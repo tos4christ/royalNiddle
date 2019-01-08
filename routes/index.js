@@ -19,8 +19,8 @@ router.get('/contactus', function(req, res) {
 router.get('/signup', function(req, res, next) {
 	if(req.user) {
 		req.logout();
-		return res.render('signup', {title: 'Sign Up'});
 	}
+	return res.render('signup', {title: 'Sign Up'});
 });
 
 
