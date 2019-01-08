@@ -13,6 +13,7 @@ router.get('/profile', function(req, res, next) {
 				if(error) {
 					return next(error);
 				} else {
+					console.log('user created');
 					return res.render('profile', {user: user});
 				}
 			})
@@ -23,6 +24,7 @@ router.get('/profile', function(req, res, next) {
 				if(error) {
 					return next(error);
 				} else {
+					console.log('this user created');
 					return res.render('profile', {user: user});
 				}
 			});
