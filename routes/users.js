@@ -7,7 +7,7 @@ var User = require('../models/user');
 // GET /user/profile
 router.get('/profile', function(req, res, next) {
 	if(req.user) {
-			return res.render('profile', {user: user, hideSign: true});
+			return res.render('profile', {user: req.user, hideSign: true});
 	} else {
 		res.redirect('/login');
 	}

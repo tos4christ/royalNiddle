@@ -37,11 +37,6 @@ function generateOrFindUser(accessToken, refreshToken, profile, done) {
 	}
 };
 
-mongoose.connect("mongodb://heroku_5sng30gq:lrveljjk8d9k6589onqdi9m5gr@ds249824.mlab.com:49824/heroku_5sng30gq", {useNewUrlParser: true});
-var db = mongoose.connection;
-
-// mongo error
-db.on('error', console.error.bind(console, 'connection error:'));
 
 //GITHUB ID AND SECRET
 //ID=804ee0e44bab74d07bc2
@@ -76,6 +71,16 @@ passport.deserializeUser(function(userId, done) {
 });
 
 var app = express();
+
+mongoose.connect("mongodb://heroku_5sng30gq:lrveljjk8d9k6589onqdi9m5gr@ds249824.mlab.com:49824/heroku_5sng30gq", {useNewUrlParser: true});
+var db = mongoose.connection;
+
+// mongo error
+db.on('error', console.error.bind(console, 'connection error:'));mongoose.connect("mongodb://heroku_5sng30gq:lrveljjk8d9k6589onqdi9m5gr@ds249824.mlab.com:49824/heroku_5sng30gq", {useNewUrlParser: true});
+var db = mongoose.connection;
+
+// mongo error
+db.on('error', console.error.bind(console, 'connection error:'));
 
 var sessionObject = {
 	secret: 'I love programming very much',
