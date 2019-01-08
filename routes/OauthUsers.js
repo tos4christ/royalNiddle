@@ -16,6 +16,7 @@ router.get('/github/callback',
 	passport.authenticate('github', {failureRedirect: '/'}), 
 	function(req, res) {
 		// Success Auth, redirect profile page
+		console.log('why now');
 		res.redirect('/users/profile');
 	});
 
