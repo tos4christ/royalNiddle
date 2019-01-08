@@ -17,6 +17,7 @@ var OauthUsers = require('./routes/OauthUsers');
 
 function generateOrFindUser(accessToken, refreshToken, profile, done) {
 	if(profile.emails[0]) {
+		console.log(profile);
 		User.findOneAndUpdate(
 			{
 				email: profile.emails[0].value
