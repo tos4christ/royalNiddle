@@ -63,10 +63,12 @@ passport.use(new FacebookStrategy({
 
 
 passport.serializeUser(function(user, done) {
+	console.log('first', user, done(null, user._id));
 	done(null, user._id);
 });
 
 passport.deserializeUser(function(userId, done) {
+	console.log('second', userId);
 	User.findById(userId, done);
 });
 
