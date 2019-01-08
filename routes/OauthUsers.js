@@ -17,7 +17,7 @@ router.get('/github/callback',
 
 // GET /facebook/login
 router.get('/facebook/login',
-	passport.authenticate('facebook', {scope: ["email"]}));
+	passport.authenticate('facebook', {scope: ["email", "phone"]}));
 
 
 // GET /facebook/callback
