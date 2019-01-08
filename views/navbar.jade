@@ -8,12 +8,12 @@ nav.navbar.navbar-fixed-top.navbar-dark.bg-inverse
         i.icn-logo.material-icons bookmark_border
         | Royal Niddle Clothings
       .nav-items.clearfix
-      if !currentUser || !user
-        a.nav-item.nav-link(href='/signup') Sign up
-      a.nav-item.nav-link(href='/aboutus') About us
-      a.nav-item.nav-link(href='/contactus') Contact us
-      if currentUser || user
-        a.nav-item.nav-link(href='/users/profile') My Profile
+        if !user || !currentUser
+          a.nav-item.nav-link(href='/signup') Sign up
+        a.nav-item.nav-link(href='/aboutus') About us
+        a.nav-item.nav-link(href='/contactus') Contact us
+        if currentUser || user
+          a.nav-item.nav-link(href='/users/profile') My Profile
 
       if currentUser || user
         div
