@@ -3,7 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 
 function checkCall(req, res, next) {
-	console.log(success to this place);
+	console.log('success to this place');
 	next();
 }
 
