@@ -2,10 +2,6 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 
-function checkCall(req, res, next) {
-	console.log('success to this place');
-	next();
-}
 
 //GET /github/login
 router.get('/github/login',
@@ -25,11 +21,10 @@ router.get('/facebook/login',
 
 
 // GET /facebook/callback
-router.get('/facebook/callback', checkCall,
+router.get('/facebook/callback',
 	passport.authenticate('facebook', {failureRedirect: '/'}),
 	function(req, res) {
 		// Success Auth, redirect profile page
-		console.log('why now');
 		res.redirect('/users/profile');
 	});
 

@@ -16,9 +16,7 @@ var usersRouter = require('./routes/users');
 var OauthUsers = require('./routes/OauthUsers');
 
 function generateOrFindUser(accessToken, refreshToken, profile, done) {
-	console.log(profile, 'end');
 	if(profile.emails[0]) {
-
 		User.findOneAndUpdate(
 			{
 				email: profile.emails[0].value
@@ -52,8 +50,7 @@ function generateOrFindUser(accessToken, refreshToken, profile, done) {
 passport.use(new GithubStrategy({
 	clientID: process.env.GITHUB_CLIENT_ID,
 	clientSecret: process.env.GITHUB_CLIENT_SECRET,
-	callbackURL: "https://royalniddle.herokuapp.com/OauthUsers/github/callback",
-	proxy: false
+	callbackURL: "https://royalniddle.herokuapp.com/OauthUsers/github/callback"
 }, generateOrFindUser));
 
 // Configure Facebook Strategy
@@ -61,22 +58,21 @@ passport.use(new FacebookStrategy({
 	clientID: process.env.FACEBOOK_APP_ID,
 	clientSecret: process.env.FACEBOOK_APP_SECRET,
 	callbackURL: "https://royalniddle.herokuapp.com/OauthUsers/facebook/callback",
-	profileFields: ['id', 'displayName', 'photos', 'email'],
-	proxy: false
+	profileFields: ['id', 'displayName', 'photos', 'email']
 }, generateOrFindUser));
 
 
-
 passport.serializeUser(function(user, done) {
+	console.log(user);
 	done(null, user._id);
 });
 
 passport.deserializeUser(function(userId, done) {
+	console.log(userId);
 	User.findById(userId, done);
 });
 
 var app = express();
-
 
 mongoose.connect("mongodb://heroku_5sng30gq:lrveljjk8d9k6589onqdi9m5gr@ds249824.mlab.com:49824/heroku_5sng30gq", {useNewUrlParser: true});
 var db = mongoose.connection;
@@ -103,11 +99,10 @@ app.use(passport.session());
 
 // make user ID available in templates
 app.use(function(req, res, next) {
+	console.log('session started', req.session);
 	res.locals.currentUser = req.session.userId;
 	next();
 });
-
-
 
 app.use(logger('dev'));
 app.use(express.json());
