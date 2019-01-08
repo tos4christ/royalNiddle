@@ -46,7 +46,6 @@ router.post('/signup', function(req, res, next) {
 		// use schema's create method to insert into Mongo
 
 		User.create(userObject, function(error, user) {
-			console.log(user);
 			if(error) {
 				return next(error);
 			} else {

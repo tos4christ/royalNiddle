@@ -8,7 +8,7 @@ nav.navbar.navbar-fixed-top.navbar-dark.bg-inverse
         i.icn-logo.material-icons bookmark_border
         | Royal Niddle Clothings
       .nav-items.clearfix
-        if !user || !currentUser
+        if !hideSign
           a.nav-item.nav-link(href='/signup') Sign up
         a.nav-item.nav-link(href='/aboutus') About us
         a.nav-item.nav-link(href='/contactus') Contact us
