@@ -22,7 +22,6 @@ var UserSchema = new mongoose.Schema({
 	},
 	phone: {
 		type: String,
-		unique: true,
 		trim: true
 	},
 	address: {
