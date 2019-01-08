@@ -12,7 +12,7 @@ nav.navbar.navbar-fixed-top.navbar-dark.bg-inverse
           a.nav-item.nav-link(href='/signup') Sign up
         a.nav-item.nav-link(href='/aboutus') About us
         a.nav-item.nav-link(href='/contactus') Contact us
-        if currentUser
+        if currentUser || user
           a.nav-item.nav-link(href='/profile') My Profile
 
       if currentUser || user
