@@ -4,7 +4,6 @@
 body {
 	background: #1d2a33 url('../images/bg.jpg') no-repeat;
 	background-size: cover; 
-	color: black;
 }
 
 p {
@@ -14,8 +13,20 @@ p {
 	padding: 20px;
 }
 
+.group {
+	background: pink;
+	padding: 5px;
+	border-radius: 5px;
+	border: 2px solid;
+}
+
+.imga {
+	margin-left: 70px;
+}
+
 .row {
-	background: url('../images/image1.jpg') repeat;
+	/* background: url('../images/image1.jpg') repeat; */
+	background: white;
 }
 
 form {
@@ -35,7 +46,6 @@ h1 {
 	margin: none;
 	padding: 5px;
 	text-align: center;
-	color: black;
 }
 
 img.index {
