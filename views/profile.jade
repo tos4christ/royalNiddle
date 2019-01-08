@@ -6,7 +6,7 @@ block content
 		.row
 			.col-md-6
 				if(user)
-					img(src=user.photo alt='avatar')
+					img(src=user.photo alt='avatar' title='your pics from facebook')
 					| #{user.name}
 				a(href='/') Go home
 			.col-md-6
