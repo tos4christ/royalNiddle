@@ -9,7 +9,6 @@ var UserSchema = new mongoose.Schema({
 	},
 	locations: {
 		type: String,
-		required: true,
 	},
 	email: {
 		type: String,
@@ -23,13 +22,11 @@ var UserSchema = new mongoose.Schema({
 	},
 	phone: {
 		type: String,
-		required: true,
 		unique: true,
 		trim: true
 	},
 	address: {
 		type: String,
-		required: true,
 		trim : true
 	},
 	photo: {
