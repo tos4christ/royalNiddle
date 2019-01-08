@@ -31,7 +31,7 @@ function generateOrFindUser(accessToken, refreshToken, profile, done) {
 				upsert: true
 			},
 				done
-		);
+		).then(user => console.log('this', user));
 	} else {
 		var noMailError = new Error('Your email privacy settings prevent you from signing into Royal Niddle');
 		done(noMailError, null);
