@@ -6,7 +6,7 @@ var User = require('../models/user');
 
 // GET /user/profile
 router.get('/profile', function(req, res, next) {
-
+	console.log('got to the profile route');
 	if(req.session.userId) {
 		User.findById(req.session.userId)
 			.exec(function(error, user) {
