@@ -17,12 +17,21 @@ router.get('/contactus', function(req, res) {
 
 //GET /signup page
 router.get('/signup', function(req, res, next) {
-	if(req.user) {
+	if(req.session || req.session.userId) {
+		req.session.destroy( function(err) {
+			if(err) {
+				return next(err);
+			} else {
+				return res.redirect('/');
+			}
+		});
+	} else if(req.user) {
 		req.logout();
+		return res.redirect('/');
+	} else {
+		return res.render('signup', {title: 'Sign Up'});
 	}
-	return res.render('signup', {title: 'Sign Up'});
 });
-
 
 
 //POST /signup form
