@@ -63,7 +63,7 @@ router.post('/signup', function(req, res, next) {
 				req.session.userId = user._id;
 				return res.redirect('/users/profile');
 			}
-		}).catch(err => next(err)) ;
+		}).catch(err => {return next(err);} ) ;
 
 	} else {
 		var err = new Error('All fields are required.');
