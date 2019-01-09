@@ -43,7 +43,6 @@ router.post('/signup', function(req, res, next) {
 			err.status = 400;
 			return next(err);
 		}
-		console.log('what next');
 		// create object with form input
 		var userObject = {
 			name: req.body.name,
