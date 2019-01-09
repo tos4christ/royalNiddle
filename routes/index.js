@@ -36,7 +36,6 @@ router.get('/signup', function(req, res, next) {
 
 //POST /signup form
 router.post('/signup', function(req, res, next) {
-	console.log('what next');
 	if(req.body.email && req.body.password && req.body.confirmPassword && req.body.locations && req.body.address) {
 		//check to see if the two passwords are correct
 		if(req.body.password !== req.body.confirmPassword) {
@@ -44,7 +43,7 @@ router.post('/signup', function(req, res, next) {
 			err.status = 400;
 			return next(err);
 		}
-
+		console.log('what next');
 		// create object with form input
 		var userObject = {
 			name: req.body.name,
@@ -58,6 +57,7 @@ router.post('/signup', function(req, res, next) {
 		// use schema's create method to insert into Mongo
 
 		User.create(userObject, function(error, user) {
+			console.log('what next second');
 			if(error) {
 				return next(error);
 			} else {
