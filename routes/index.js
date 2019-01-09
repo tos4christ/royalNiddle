@@ -56,8 +56,7 @@ router.post('/signup', function(req, res, next) {
 		// use schema's create method to insert into Mongo
 
 		User.create(userObject, function(error, user) {
-			if(error) {
-				
+			if(error) {	
 				return res.render('error', {error: error, message: 'This is a serious error: Duplicate emails detected'});
 			} else {
 				req.session.userId = user._id;
