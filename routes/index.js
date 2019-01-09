@@ -36,7 +36,7 @@ router.get('/signup', function(req, res, next) {
 
 //POST /signup form
 router.post('/signup', function(req, res, next) {
-	
+	console.log('what next');
 	if(req.body.email && req.body.password && req.body.confirmPassword && req.body.locations && req.body.address) {
 		//check to see if the two passwords are correct
 		if(req.body.password !== req.body.confirmPassword) {
