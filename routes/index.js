@@ -57,17 +57,13 @@ router.post('/signup', function(req, res, next) {
 
 		User.create(userObject, function(error, user) {
 			if(error) {
-				console.log('this', error);
-				return next(error);
+				
+				return res.render('error', {error: error, message: 'This is a serious error: Duplicate emails detected'});
 			} else {
 				req.session.userId = user._id;
 				return res.redirect('/users/profile');
 			}
-		}).catch(err => {
-			console.log('it caught it'); 
-			return res.render('error', {error: err, message: 'Serious Error: duplicate email'})}
-			 ) ;
-
+		});
 	} else {
 		var err = new Error('All fields are required.');
 		err.status = 400;
