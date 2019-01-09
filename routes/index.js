@@ -56,14 +56,17 @@ router.post('/signup', function(req, res, next) {
 		// use schema's create method to insert into Mongo
 
 		User.create(userObject, function(error, user) {
-			console.log(user);
 			if(error) {
+				console.log('this', error);
 				return next(error);
 			} else {
 				req.session.userId = user._id;
 				return res.redirect('/users/profile');
 			}
-		}).catch(err => {return next(err);} ) ;
+		}).catch(err => {
+			console.log('it caught it'); 
+			return res.render('error', {error: err, message: 'Serious Error: duplicate email'})}
+			 ) ;
 
 	} else {
 		var err = new Error('All fields are required.');
