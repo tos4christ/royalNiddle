@@ -16,11 +16,10 @@ var usersRouter = require('./routes/users');
 var OauthUsers = require('./routes/OauthUsers');
 
 function generateOrFindUser(accessToken, refreshToken, profile, done) {
-	console.log('test this', profile);
-	if(profile.emails[0]) {
+	if(profile.displayName) {
 		User.findOneAndUpdate(
 			{
-				email: profile.emails[0].value
+				name: profile.displayName
 			},
 			{
 				name: profile.displayName || profile.username,
