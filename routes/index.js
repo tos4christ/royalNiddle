@@ -58,7 +58,7 @@ router.post('/signup', function(req, res, next) {
 		User.create(userObject, function(error, user) {
 			if(error) {
 				
-				return res.render('error', {error: error.message, message: 'This is a serious error: Duplicate emails detected'});
+				return res.render('error', {error: error, message: 'This is a serious error: Duplicate emails detected'});
 			} else {
 				req.session.userId = user._id;
 				return res.redirect('/users/profile');
