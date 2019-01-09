@@ -24,7 +24,7 @@ function generateOrFindUser(accessToken, refreshToken, profile, done) {
 			},
 			{
 				name: profile.displayName || profile.username,
-				email: profile.emails[0].value,
+				email: profile.emails[0].value || test@example.com,
 				photo: profile.photos[0].value
 			},
 			{
