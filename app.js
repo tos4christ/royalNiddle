@@ -17,6 +17,12 @@ var OauthUsers = require('./routes/OauthUsers');
 
 function generateOrFindUser(accessToken, refreshToken, profile, done) {
 	console.log(profile);
+	let testMail
+	if(!profile.emails) {
+		testMail = 'test@example.com';
+	} else {
+		testMail = profile.emails[0].value;
+	}
 	if(profile.displayName) {
 		User.findOneAndUpdate(
 			{
@@ -24,7 +30,7 @@ function generateOrFindUser(accessToken, refreshToken, profile, done) {
 			},
 			{
 				name: profile.displayName || profile.username,
-				email: profile.emails[0].value !== undefined ? profile.emails[0].value : 'test@example.com',
+				email: testMail,
 				photo: profile.photos[0].value
 			},
 			{
