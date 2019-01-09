@@ -22,12 +22,12 @@ router.get('/signup', function(req, res, next) {
 			if(err) {
 				return next(err);
 			} else {
-				return res.redirect('/');
+				return res.render('signup', {title: 'Sign Up'});
 			}
 		});
 	} else if(req.user) {
 		req.logout();
-		return res.redirect('/');
+		return res.render('signup', {title: 'Sign Up'});
 	} else {
 		return res.render('signup', {title: 'Sign Up'});
 	}
