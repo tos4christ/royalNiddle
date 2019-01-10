@@ -200,7 +200,7 @@ input[type='submit'] {
 	}
 }
 
-@media (min-width: 768px) { 
+@media (max-width: 768px) { 
 	.navbar {
 		min-height: 70px;
 	}

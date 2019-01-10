@@ -16,7 +16,6 @@ var usersRouter = require('./routes/users');
 var OauthUsers = require('./routes/OauthUsers');
 
 function generateOrFindUser(accessToken, refreshToken, profile, done) {
-	console.log(profile);
 	let testMail
 	if(!profile.emails) {
 		testMail = 'test@example.com';
@@ -37,7 +36,7 @@ function generateOrFindUser(accessToken, refreshToken, profile, done) {
 				upsert: true
 			},
 				done
-		).then(user => console.log(user));
+		);
 	} else {
 		var noMailError = new Error('Your email privacy settings prevent you from signing into Royal Niddle');
 		done(noMailError, null);
