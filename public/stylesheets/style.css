@@ -211,6 +211,7 @@ input[type='submit'] {
 	.nav-items {
 		margin-right: auto;
 		margin-left: auto;
+		display: flex;
 	}
 	.main {
 		padding-top: 8rem;
