@@ -4,7 +4,6 @@ nav.navbar.navbar-fixed-top.navbar-bg-inverse
       span.icon-bar
       span.icon-bar
       span.icon-bar
-   
     #navbar.collapse.navbar-collapse 
       a.navbar-brand(href='/')
           img.avatar(src='/images/home.jpg')
@@ -15,25 +14,25 @@ nav.navbar.navbar-fixed-top.navbar-bg-inverse
         if !hideSign
           li
             a(href='/signup') Sign up
-        li.dropdown
+        li.dropdown.nav-item.nav-link
           a.dropdown-toggle(href='/aboutus', data-toggle="dropdown") About us
             span.caret
             ul.dropdown-menu
-              li 
+              li.nav-item.nav-link
                 a tos
-        li
+        li.nav-item.nav-link
           a(href='/contactus') Contact us
         if currentUser || user
-          li
+          li.nav-item.nav-link
             a(href='/users/profile') My Profile
       ul.nav.navbar-nav.navbar-right.loginButton
         if currentUser || user
-          li
+          li.nav-item.nav-link
             img.avatar(src='/images/home.jpg' alt='avatar')
-          li
+          li.nav-item.nav-link
             a.btn.btn-light(href='/users/logout') Log out
         else
-          li
+          li.nav-item.nav-link
             span.glyphicon.glyphicon-log-in
             a.btn.btn-info(href='/login') Log in
       

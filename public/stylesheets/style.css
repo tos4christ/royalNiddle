@@ -6,6 +6,7 @@ body {
 	background-size: cover; 
 	*/
 	position: relative;
+	height: 100%;
 }
 
 .loginButton a.btn {
@@ -140,6 +141,32 @@ a {
 	text-align: center;
 }
 
+ul.nav li a:hover {
+	background-color: transparent;
+}
+
+
 /* Media Queries */
 
+@media (max-width:380px) {
+	a.navbar-brand, .mainNav, .loginButton {
+		display: block;
+		width: 100%;
+		margin: 0;
+		padding: 0px;
+		text-align: center;
+	}
+	.mainNav {
+		margin-left: 40px;
+	}
+	a.navbar-brand img.avatar {
+		display: none;
+	}
 
+	.myScrollspy {
+		display: none;
+	}
+	.col {
+		width: 100%;
+	}
+}
