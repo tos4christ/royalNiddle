@@ -20,6 +20,10 @@ body {
 .affix {
 	top: 90px;
 }
+.mainNav li:active {
+	background-color: black;
+	color: blue
+}
 
 p {
 	color: black;
