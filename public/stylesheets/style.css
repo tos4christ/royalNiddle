@@ -17,13 +17,19 @@ body {
 .loginButton {
 	margin: 20px;
 	padding: 15px;
+	padding-right: 100px;
 }
+
 .affix {
 	top: 90px;
 }
 .mainNav li:active {
 	background-color: black;
 	color: blue
+}
+
+#navbar ul.mainNav {
+	padding-left: 150px;
 }
 
 p {
@@ -87,6 +93,10 @@ input[type='submit'] {
 	margin: 0;
 	padding: 0;
 }
+.navbar-header {
+	position: relative;
+	z-index: 1;
+}
 #navbar {
 	position: relative;
 }
@@ -120,6 +130,7 @@ input[type='submit'] {
 	float: left;
 	padding: 0;
 }
+
 .avatar {
 	width: 35px;
 	margin: -8px 0px 10px 100px;
@@ -127,10 +138,7 @@ input[type='submit'] {
 	border: solid 1px rgba(255,255,255, .75);
 	border-radius: 50%;
 }
-a {
-	margin: 0;
-	padding: 0;
-}
+
 
 .foot {
 	font-size: 1.35rem;
@@ -139,6 +147,10 @@ a {
 }
 
 ul.nav li a:hover {
+	background-color: transparent;
+}
+
+ul.nav li a:active {
 	background-color: transparent;
 }
 
