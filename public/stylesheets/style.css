@@ -10,8 +10,8 @@ body {
 }
 
 .loginButton a.btn {
-	margin: 15px 10px 0 10px;
-	padding: 5px;
+	margin: 0px 10px 0 10px;
+	padding: 3px;
 	display: inline;
 }
 .loginButton {
@@ -144,12 +144,17 @@ ul.nav li a:hover {
 
 
 /* Media Queries */
+@media (max-width:840px) {
+	.myScrollspy {
+		display: none;
+	}
+}
 
 @media (max-width:760px) {
 	 .mainNav, .loginButton {
 		display: block;
 		width: 100%;
-		margin-left: 60%;
+		margin-left: 80%;
 		padding: 0px;
 		text-align: right;
 		float: right;
@@ -171,7 +176,7 @@ ul.nav li a:hover {
 		height: 100%;
 		width: 50%;
 	}
-	.hide {
+	.hiddez {
 		display: none;
 	}
 	.container-fluid, .resize {
