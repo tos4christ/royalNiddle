@@ -148,7 +148,7 @@ ul.nav li a:hover {
 
 /* Media Queries */
 
-@media screen and (max-width:7600px) {
+@media screen and (max-width:760px) {
 	 .mainNav, .loginButton {
 		display: block;
 		width: 100%;
