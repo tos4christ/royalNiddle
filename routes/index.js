@@ -2,9 +2,12 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
 
+const title = ['#history', '#latest', '#final'];
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+	let hideSign = req.user ? true : false;
+  res.render('index', { title: title, hideSign : hideSign });
 });
 
 router.get('/aboutus', function(req, res, next) {

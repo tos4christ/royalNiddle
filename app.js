@@ -16,8 +16,7 @@ var usersRouter = require('./routes/users');
 var OauthUsers = require('./routes/OauthUsers');
 
 function generateOrFindUser(accessToken, refreshToken, profile, done) {
-	console.log(profile);
-	let testMail
+	let testMail;
 	if(!profile.emails) {
 		testMail = 'test@example.com';
 	} else {
@@ -37,13 +36,12 @@ function generateOrFindUser(accessToken, refreshToken, profile, done) {
 				upsert: true
 			},
 				done
-		).then(user => console.log(user));
+		)
 	} else {
 		var noMailError = new Error('Your email privacy settings prevent you from signing into Royal Niddle');
 		done(noMailError, null);
 	}
-};
-
+}
 
 //GITHUB ID AND SECRET
 //ID=804ee0e44bab74d07bc2
@@ -67,7 +65,6 @@ passport.use(new FacebookStrategy({
 	callbackURL: "https://royalniddle.herokuapp.com/OauthUsers/facebook/callback",
 	profileFields: ['id', 'displayName', 'photos', 'email']
 }, generateOrFindUser));
-
 
 passport.serializeUser(function(user, done) {
 	done(null, user._id);

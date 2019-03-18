@@ -1,23 +1,39 @@
-nav.navbar.navbar-fixed-top.navbar-dark.bg-inverse
-  button.navbar-toggler.hidden-md-up.pull-xs-right(type='button', data-toggle='collapse', data-target='#navbar') &#x2630;
-  #navbar.navbar-nav.collapse.navbar-toggleable-sm
-    .container
+nav.navbar.navbar-fixed-top.navbar-bg-inverse
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar') &#x2630;
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
       a.navbar-brand(href='/')
-        img.avatar.img-circle.hidden-xs-down(src='/images/home.jpg')
+          img.avatar(src='/images/home.jpg')
       a.navbar-brand(href='/') 
         i.icn-logo.material-icons bookmark_border
         | Royal Niddle Clothings
-      .nav-items.clearfix
+    #navbar.collapse.navbar-collapse 
+      ul.nav.navbar-nav.mainNav
         if !hideSign
-          a.nav-item.nav-link(href='/signup') Sign up
-        a.nav-item.nav-link(href='/aboutus') About us
-        a.nav-item.nav-link(href='/contactus') Contact us
+          li
+            a(href='/signup') Sign up
+        li.dropdown
+          a.dropdown-toggle(href='/aboutus', data-toggle="dropdown") About us
+            span.caret
+            ul.dropdown-menu
+              li 
+                a tos
+        li
+          a(href='/contactus') Contact us
         if currentUser || user
-          a.nav-item.nav-link(href='/users/profile') My Profile
-
-      if currentUser || user
-        div
-          img.avatar.img-circle.hidden-xs-down(src='/images/home.jpg' alt='avatar')
-          a.btn.btn-light.pull-md-right(href='/users/logout') Log out
-      else
-        a.btn.btn-info.pull-md-right(href='/login') Log in
+          li
+            a(href='/users/profile') My Profile
+      ul.nav.navbar-nav.navbar-right.loginButton
+        if currentUser || user
+          li
+            img.avatar(src='/images/home.jpg' alt='avatar')
+          li
+            a.btn.btn-light(href='/users/logout') Log out
+        else
+          li
+            span.glyphicon.glyphicon-log-in
+            a.btn.btn-info(href='/login') Log in
+      
