@@ -156,13 +156,18 @@ ul.nav li a:active {
 
 
 /* Media Queries */
-@media (max-width:840px) {
+@media screen and (min-width:840px) {
 	.myScrollspy {
-		display: none;
+		display: block;	
+	}
+	.loginButton {
+		margin: 0;
+		display: block;
+		padding: 15px;
 	}
 }
 
-@media (max-width:760px) {
+@media screen and (max-width:760px) {
 	 .mainNav, .loginButton {
 		display: block;
 		width: 100%;
