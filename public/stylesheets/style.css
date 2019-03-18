@@ -148,21 +148,46 @@ ul.nav li a:hover {
 
 /* Media Queries */
 
-@media (max-width:380px) {
-	a.navbar-brand, .mainNav, .loginButton {
+@media screen and (max-width:760px) {
+	 .mainNav, .loginButton {
 		display: block;
 		width: 100%;
-		margin: 0;
+		margin-left: 60%;
 		padding: 0px;
-		text-align: center;
+		text-align: right;
+		float: right;
+	}
+	.navbar-header {
+		float: none;
+		padding: 0;
+		margin: 0;
+		display: block;
+		height: 100%;
+	}
+	.shown {
+		display: block;
+		float: left;
+		padding: 0;
+		margin-left: -80px;
+		margin-top: 5px;
+		top: 0;
+		height: 100%;
+		width: 50%;
+	}
+	.hide {
+		display: none;
+	}
+	.container-fluid, .resize {
+		padding: 0;
+		height: 60px;
+		margin: 0;
 	}
 	.mainNav {
 		margin-left: 40px;
 	}
-	a.navbar-brand img.avatar {
-		display: none;
+	.mainNav li a {
+		background: transparent;
 	}
-
 	.myScrollspy {
 		display: none;
 	}

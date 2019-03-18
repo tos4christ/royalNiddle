@@ -1,15 +1,17 @@
-nav.navbar.navbar-fixed-top.navbar-bg-inverse
+nav.navbar.navbar-fixed-top.navbar-bg-inverse.resize
   .container-fluid
-    button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar') &#x2630;
-      span.icon-bar
-      span.icon-bar
-      span.icon-bar
-    #navbar.collapse.navbar-collapse 
-      a.navbar-brand(href='/')
-          img.avatar(src='/images/home.jpg')
-      a.navbar-brand(href='/') 
+    .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar') &#x2630;
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand.shown(href='/')
+            img.avatar(src='/images/home.jpg')
+      a.navbar-brand.hide(href='/') 
         i.icn-logo.material-icons bookmark_border
         | Royal Niddle Clothings
+    #navbar.collapse.navbar-collapse 
+      
       ul.nav.navbar-nav.mainNav
         if !hideSign
           li
