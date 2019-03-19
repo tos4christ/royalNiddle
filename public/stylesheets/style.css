@@ -9,6 +9,21 @@ body {
 	height: 100%;
 }
 
+.carousel {
+	top: 100px;
+	width: 80%;
+	height: 250px;
+	background: #2aabd2;
+	margin-left: 10%;
+}
+.inner.carousel {
+	width: 70%;
+}
+img .img-responsive {
+	width: 50%;
+	height: auto;
+}
+
 .loginButton a.btn {
 	margin: 0px 10px 0 10px;
 	padding: 3px;

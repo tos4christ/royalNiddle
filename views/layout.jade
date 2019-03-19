@@ -14,6 +14,29 @@ head
   
 body(data-spy="scroll", data-target=".myScrollspy", data-offset="10")
 
+	.carousel.slide(data-ride="carousel" id="myCarousel")
+		.carousel-inner(role="listbox")
+			.item.active
+				img.img-responsive(src="/images/images/download (1).jpg")
+				.carousel-caption 
+					h1 This is a test carousel 1
+			.item
+				img.img-responsive(src="/images/images/download (2).jpg")
+				.carousel-caption 
+					h1 This is a test carousel 2
+			.item
+				img.img-responsive(src="/images/images/download (3).jpg")
+				.carousel-caption 
+					h1 This is a test carousel 3
+			.item
+				img.img-responsive(src="/images/images/download (4).jpg")
+				.carousel-caption 
+					h1 This is a test carousel 4
+		ol.carousel-indicators
+			li.active(data-target="#myCarousel" data-slide-to="0")
+			li(data-target="#myCarousel" data-slide-to="1")
+		
+
 	//load navbar
 	include navbar
 
