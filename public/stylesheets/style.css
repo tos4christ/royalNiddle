@@ -19,10 +19,6 @@ body {
 .inner.carousel {
 	width: 70%;
 }
-img .img-responsive {
-	width: 50%;
-	height: auto;
-}
 
 .loginButton a.btn {
 	margin: 0px 10px 0 10px;
